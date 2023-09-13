@@ -23,11 +23,15 @@ jobs:
       - name: Create new branch and push to private repository
         run: |
           NEW_BRANCH_NAME="add-submodule-$(date +'%Y%m%d%H%M%S')"
+          
           echo "Creating branch: $NEW_BRANCH_NAME"
           git checkout -b $NEW_BRANCH_NAME
+          
           echo "Pushing branch to remote: $NEW_BRANCH_NAME"
-          git remote add private_origin https://$GIT_USERNAME:$GIT_PERSONAL_ACCESS_TOKEN@github.com/DTIG-US/dtig-web-qa.git
+          git remote add private_origin https://$GIT_USERNAME:$GIT_TOKEN@github.com/DTIG-US/dtig-web-qa.git
+          
           git push private_origin $NEW_BRANCH_NAME
+        
         env:
           GIT_PERSONAL_ACCESS_TOKEN: ${{ secrets.DTIG_QA_WEB_GITHUB_TOKEN }}
             
