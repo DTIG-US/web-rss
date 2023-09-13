@@ -29,10 +29,9 @@ jobs:
             -H "Accept: application/vnd.github.v3+json" \
             -H "Authorization: token ${{ secrets.GIT_TOKEN }}" \  # Use the GH_TOKEN secret
             https://api.github.com/repos/DTIG-US/dtig-web-qa/git/refs \
-            -d '{
-              "ref": "refs/heads/'"$NEW_BRANCH_NAME"'",
-              "sha": "main"
-            }'
+            -d "{\"ref\": \"refs/heads/$NEW_BRANCH_NAME\", \"sha\": \"main\"}" \
+            "https://api.github.com/repos/DTIG-US/dtig-web-qa/git/refs"
+
           
           # Switch to the new branch locally
           git checkout -b $NEW_BRANCH_NAME
