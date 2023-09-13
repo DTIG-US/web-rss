@@ -28,7 +28,7 @@ jobs:
           curl -X POST \
             -H "Accept: application/vnd.github.v3+json" \
             -H "Authorization: token $GIT_TOKEN" \
-            https://api.github.com/repos/DTIG-US/dtig-web-qa/git/refs \
+            https://$GIT_USERNAME:$GIT_TOKEN@api.github.com/repos/DTIG-US/dtig-web-qa/git/refs \
             -d '{
               "ref": "refs/heads/'"$NEW_BRANCH_NAME"'",
               "sha": "main"
