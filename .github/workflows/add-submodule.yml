@@ -17,6 +17,7 @@ jobs:
         run: |
           git config --global user.email "actions@github.com"
           git config --global user.name "GitHub Actions"
+          git remote remove origin || true  # Remove the existing "origin" remote if it exists
           git remote add origin https://$GIT_USERNAME:$GIT_TOKEN@github.com/DTIG-US/dtig-web-qa.git
 
       - name: Create new branch
