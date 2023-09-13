@@ -17,8 +17,7 @@ jobs:
         run: |
           git config --global user.email "actions@github.com"
           git config --global user.name "GitHub Actions"
-          git remote remove origin || true  # Remove the existing "origin" remote if it exists
-          
+                    
       - name: Create new branch and push to private repository
         run: |
           NEW_BRANCH_NAME="add-submodule-$(date +'%Y%m%d%H%M%S')"
