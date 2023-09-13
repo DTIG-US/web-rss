@@ -34,11 +34,12 @@ jobs:
               "sha": "main"
             }'
 
-    # Switch to the new branch locally
-    git checkout -b $NEW_BRANCH_NAME
-
-    # Push the new branch to the remote repository
-    git push origin $NEW_BRANCH_NAME
+          # Switch to the new branch locally
+          git checkout -b $NEW_BRANCH_NAME
+      
+          # Push the new branch to the remote repository
+          git push origin $NEW_BRANCH_NAME
+      
       - name: Add Submodule
         run: |
           # Replace REPO_URL with the URL of the new repository
