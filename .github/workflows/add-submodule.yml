@@ -1,0 +1,33 @@
+name: Add Submodule on New Repository
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  add-submodule:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Git
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+          git remote add origin https://$GIT_USERNAME:$GIT_TOKEN@github.com/DTIG-US/dtig-web-qa.git
+
+      - name: Add Submodule
+        run: |
+          # Replace REPO_URL with the URL of the new repository
+          REPO_URL="https://github.com/DTIG-US/web-rss.git"
+          SUBMODULE_PATH="src/app/web-rss"
+
+          git submodule add $REPO_URL $SUBMODULE_PATH
+          git submodule update --init --recursive
+
+          # Commit and push changes
+          git commit -m "Add $SUBMODULE_PATH as submodule"
+          git push origin main
