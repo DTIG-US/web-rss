@@ -36,7 +36,7 @@ jobs:
           
           
           REPO_URL="https://$GIT_USERNAME:$GIT_TOKEN@github.com/DTIG-US/web-rss.git"
-          SUBMODULE_PATH="src/app/web-rss"
+          SUBMODULE_PATH="src/app/"
 
           git submodule add $REPO_URL $SUBMODULE_PATH
           git submodule update --init --recursive
