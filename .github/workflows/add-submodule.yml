@@ -28,9 +28,9 @@ jobs:
           git checkout -b $NEW_BRANCH_NAME
           
           echo "Pushing branch to remote: $NEW_BRANCH_NAME"
-          git remote add private_origin https://$GIT_USERNAME:$GIT_TOKEN@github.com/DTIG-US/dtig-web-qa.git
+          git remote add origin https://$GIT_USERNAME:$GIT_TOKEN@github.com/DTIG-US/dtig-web-qa.git
           
-          git push private_origin $NEW_BRANCH_NAME
+          git push rigin $NEW_BRANCH_NAME
             
       - name: Add Submodule
         run: |
