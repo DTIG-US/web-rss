@@ -36,7 +36,7 @@ jobs:
           # Replace REPO_URL with the URL of the new repository
           
           
-          REPO_URL="https://$GIT_USERNAME:$GIT_TOKEN@github.com/DTIG-US/web-rss.git"
+          REPO_URL="https://$GIT_USERNAME:{{ secrets.DTIG_QA_WEB_GITHUB_TOKEN }} @github.com/DTIG-US/web-rss.git"
           SUBMODULE_PATH="src/app/"
 
           git submodule add $REPO_URL $SUBMODULE_PATH
