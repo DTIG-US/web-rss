@@ -24,16 +24,6 @@ jobs:
         run: |
           NEW_BRANCH_NAME="add-submodule-$(date +'%Y%m%d%H%M%S')"
       
-          # Create the new branch using GitHub's REST API
-          curl -X POST \
-            -H "Accept: application/vnd.github.v3+json" \
-            -H "Authorization: token $GIT_TOKEN" \
-            https://$GIT_USERNAME:$GIT_TOKEN@api.github.com/repos/DTIG-US/dtig-web-qa/git/refs \
-            -d '{
-              "ref": "refs/heads/'"$NEW_BRANCH_NAME"'",
-              "sha": "main"
-            }'
-
           # Switch to the new branch locally
           git checkout -b $NEW_BRANCH_NAME
       
