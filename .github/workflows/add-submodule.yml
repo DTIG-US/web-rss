@@ -18,6 +18,7 @@ jobs:
           git config user.email "john.aziz@dtig.us"
           git config user.name "$GIT_USERNAME"
           git remote remove origin || true  # Remove the existing "origin" remote if it exists
+          git remote add origin https://$GIT_USERNAME:$GIT_TOKEN@github.com/DTIG-US/dtig-web-qa.git
           
       - name: Create new branch and push to private repository
         run: |
@@ -27,8 +28,7 @@ jobs:
           git checkout -b $NEW_BRANCH_NAME
           
           echo "Pushing branch to remote: $NEW_BRANCH_NAME"
-          git remote add origin https://$GIT_USERNAME:$GIT_TOKEN@github.com/DTIG-US/dtig-web-qa.git
-          
+                    
           git push origin $NEW_BRANCH_NAME
             
       - name: Add Submodule
