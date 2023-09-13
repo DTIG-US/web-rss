@@ -31,9 +31,6 @@ jobs:
           git remote add private_origin https://$GIT_USERNAME:$GIT_TOKEN@github.com/DTIG-US/dtig-web-qa.git
           
           git push private_origin $NEW_BRANCH_NAME
-        
-        env:
-          GIT_PERSONAL_ACCESS_TOKEN: ${{ secrets.DTIG_QA_WEB_GITHUB_TOKEN }}
             
       - name: Add Submodule
         run: |
