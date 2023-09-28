@@ -16,11 +16,11 @@ jobs:
       - name: Set up Git
         run: |
           git config user.email "john.aziz@dtig.us"
-          git config user.name "$GIT_DTIG_WEB_QA_USERNAME"
+          git config user.name "$GIT_USERNAME"
           git remote remove origin || true  # Remove the existing "origin" remote if it exists
       
           # Use the correct URL format for the private repository
-          REPO_URL="https://$GIT_DTIG_WEB_QA_USERNAME:$GIT_DTIG_WEB_QA_TOKEN@github.com/DTIG-US/dtig-web-qa.git"
+          REPO_URL="https://$GIT_USERNAME:$GIT_TOKEN@github.com/DTIG-US/dtig-web-qa.git"
           git remote add origin $REPO_URL
           
       - name: Create new branch and push to private repository
@@ -39,7 +39,7 @@ jobs:
           # Replace REPO_URL with the URL of the new repository
           
           
-          REPO_URL="https://$GIT_DTIG_WEB_QA_USERNAME:{{ secrets.DTIG_QA_WEB_GITHUB_TOKEN }} @github.com/DTIG-US/web-rss.git"
+          REPO_URL="https://$GIT_USERNAME:{{ secrets.DTIG_QA_WEB_GITHUB_TOKEN }} @github.com/DTIG-US/web-rss.git"
           SUBMODULE_PATH="src/app/"
 
           git submodule add $REPO_URL $SUBMODULE_PATH
