@@ -18,7 +18,8 @@ jobs:
           git config user.email "john.aziz@dtig.us"
           git config user.name "$GIT_USERNAME"
           git remote remove origin || true  # Remove the existing "origin" remote if it exists
-      
+
+          git config --get remote.origin.url
           # Use the correct URL format for the private repository
           REPO_URL="https://$GIT_USERNAME:$GIT_TOKEN@github.com/DTIG-US/dtig-web-qa.git"
           git remote add origin $REPO_URL
