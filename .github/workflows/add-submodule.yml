@@ -22,6 +22,9 @@ jobs:
           
       - name: Create new branch and push to private repository
         run: |
+          git config user.email "john.aziz@dtig.us"
+          git config user.name "$GIT_USERNAME"
+          
           NEW_BRANCH_NAME="add-submodule-$(date +'%Y%m%d%H%M%S')"
           
           echo "Creating branch: $NEW_BRANCH_NAME"
