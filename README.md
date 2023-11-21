@@ -1,5 +1,9 @@
 ## RSS Feed README
 
+Click [here](/CHANGELOG.md) for the CHANGE LOG
+
+Click [here](/CLIFF_NOTES.md) for the CLIFF NOTES
+
 ### Overview
 
 This README provides a brief guide on how to create and maintain an RSS feed for your website manually using XML. An RSS (Really Simple Syndication) feed allows you to keep your audience updated with the latest blog posts or news articles.
